@@ -1,2 +1,2 @@
-# Scaler-python-problems
+# Scaler-python-Beginners-problems
 Python Beginner batch problems

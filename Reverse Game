@@ -1,0 +1,88 @@
+Reverse Game
+
+Problem Description
+
+Write a program to input T numbers(N) from user and find reverse of the given number.
+
+
+
+Problem Constraints
+
+1 <= T <= 100
+
+1 <= N <= 100000000
+
+
+
+Input Format
+
+First line is T which means number of test cases.
+
+Each next N lines contain an integer N.
+
+
+
+Output Format
+
+T lines each containing reverse of the input integer.
+
+
+
+Example Input
+
+Input 1:
+
+2
+101
+105
+Input 2:
+
+ 
+1
+100
+
+
+Example Output
+
+Output 1:
+
+101
+501
+Output 2:
+
+1
+
+
+Example Explanation
+
+Explanation 1:
+
+Reverse(101)=101
+Reverse(105)=501
+Explanation 2:
+
+Reverse(100)=001=1
+
+===========================================================================
+Solution  Python 3.5
+===========================================================================
+
+def main():
+    # YOUR CODE GOES HERE
+    # Please take input and print output to standard input/output (stdin/stdout)
+    # E.g. 'input()/raw_input()' for input & 'print' for output
+    T=int(input())
+    for i in range (T):
+        N = int(input())
+        ans=0
+        while N!=0:
+            rem = N%10
+            ans = ans*10+rem
+            N=N//10
+        print(ans)
+    
+    return 0
+
+if __name__ == '__main__':
+    main()
+

@@ -1,0 +1,39 @@
+Little Ponny and Boring Arrays
+
+You are given an Array A of size N.
+In one operation you can select any two elements from it, add their absolute difference in your score and remove them from the array
+You need to maximize the score.
+
+===================================================
+Not optimized solution  Python 3.5
+===================================================
+
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        z = 0
+        while len(A)>1:
+            x=max(A)
+            y=min(A)
+            z=z+abs(x-y)
+            A.pop(A.index(x))
+            A.pop(A.index(y))
+        return z
+        
+===================================================
+ Optimized solution  Python 3.5
+===================================================
+class Solution:
+    #@param A : list of integers
+    #@return an integer
+    
+    def solve(self, A):
+      A.sort()
+      score,i,j = 0,0,len(A)-1
+      while(i<j):
+          score += A[j]-A[i]
+          i+=1
+          j-=1
+      return score
+      

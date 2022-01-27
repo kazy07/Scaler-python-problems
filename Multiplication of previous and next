@@ -1,0 +1,28 @@
+Multiplication of previous and next
+
+Given an array of integers A, update every element with multiplication of previous and next elements with the following exceptions.
+a) First element is replaced by multiplication of first and second.
+b) Last element is replaced by multiplication of last and second last.
+
+
+=========================================================================================
+Solution Python 3.5
+=========================================================================================
+
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def solve(self, A):
+        l= len(A)
+        if l==1:
+            return A
+        B= list(range(l))
+        for i in range (0,l):
+            if (i==0):
+                B[i]= A[i]*A[i+1]
+            elif (i == l-1):
+                B[i]= A[i-1]* A[i]
+            else:
+                B[i]= A[i-1]*A[i+1]
+            
+        return B

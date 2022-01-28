@@ -1,0 +1,52 @@
+Shaggy and distances
+
+Problem Description 1
+
+Shaggy has an array A consisting of N elements. We call a pair of distinct indices in that array as a special pair if elements at that index in the array are equal.
+
+Shaggy wants you to find a special pair such that distance between that pair is minimum. Distance between two indices is defined as |i-j|. If there is no special pair in the array then return -1.
+
+Problem Description 2
+Minimum distance between any two equal elements in an Array
+Given an array arr, the task is to find the minimum distance between any two same elements in the array. If no such element is found, return -1.
+
+Examples:  
+
+Input: arr = {1, 2, 3, 2, 1} 
+Output: 2 
+Explanation: 
+There are two matching pairs of values: 1 and 2 in this array. 
+Minimum Distance between two 1’s = 4 
+Minimum Distance between two 2’s = 2 
+Therefore, Minimum distance between any two equal elements in the Array = 2
+
+Input: arr = {3, 5, 4, 6, 5, 3} 
+Output: 3 
+Explanation: 
+There are two matching pairs of values: 3 and 5 in this array. 
+Minimum Distance between two 3’s = 5 
+Minimum Distance between two 5’s = 3 
+Therefore, Minimum distance between any two equal elements in the Array = 3 
+
+========================================================================================================
+Solution python 3.5
+========================================================================================================
+
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        hmap = dict()
+        minDistance = 10**9
+        previousIndex = 0
+        currentIndex = 0
+        for i in range (len(A)):
+            if A[i] in hmap:
+               currentIndex = i
+               previousIndex = hmap[A[i]]
+               minDistance = min((currentIndex-previousIndex),minDistance)
+            
+            hmap[A[i]]=i
+        if minDistance==10**9:
+            return -1
+        return minDistance

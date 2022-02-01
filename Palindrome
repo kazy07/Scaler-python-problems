@@ -1,0 +1,56 @@
+Palindrome 
+
+ex. radar , malayalam
+
+=================================================
+beginners method 1
+=================================================
+def pal(n):
+    s=''.join(list(reversed(n)))
+    if  s== n:
+        print (True)
+    else:
+        print (False)
+        
+=================================================
+beginners method 2
+=================================================
+def pal(n):
+    s= n[::-1]
+    if  s== n:
+        print (True)
+    else:
+        print (False)
+
+==================================================
+beginners method 3
+==================================================
+
+def pal2(n):
+    a = list(n)
+    l= len(a)
+    nl=list()
+    for i in range (l-1,-1,-1):
+        nl.append(a[i])
+    st= ''.join(nl)
+    if  st== n:
+        print (True)
+    else:
+        print (False)
+ 
+ ==================================================================================================
+ pro method to check values from beginning and from the end are matching upto middle of the string
+ taught by Deepesh sir
+ =================================================================================================
+ 
+ def palindrome(s):
+    left = 0
+    right = len(s)-1
+    while left<right:
+      if s[left]!=s[right]
+          return False
+      else:
+          left = left + 1
+          right= right - 1
+    return True
+        

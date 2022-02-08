@@ -56,7 +56,7 @@ For the 3rd query, he has 10 amount of money and he can buy the third and fourth
 For the 2nd query, he has 2 amount of money and he can't buy any phone with it 
 
 ====================================================================================================================
-Solution Python 3.5
+Solution Python 3.5  most optimized approach
 ====================================================================================================================
 
 from bisect import bisect_right
@@ -72,3 +72,33 @@ class Solution:
         for i in range (len(B)):
             B[i]= bisect_right(A,B[i])
         return B
+
+==================================================================================
+Solution using Binary Search less optimized than above solution
+==================================================================================
+class Solution:
+    # @param A : list of integers
+    # @param B : list of integers
+    # @return a list of integers
+    def solve(self, A, B):
+    # making prefix sum
+        for i in range (1,len(A)):
+            A[i] = A[i] + A[i-1]
+        mid=0
+        ans=[]
+        count=0
+    #implementing binary search
+        for i in range (len(B)):
+            start = 0
+            end =len(A) - 1
+            while start<=end:
+                mid= (start+end)//2
+                if A[mid]<=B[i]:
+                    count=mid+1
+                    start=mid+1
+                elif A[mid]>B[i]:
+                    end= mid-1
+            ans.append(count)
+            count=0
+        return ans
+

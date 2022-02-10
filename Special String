@@ -8,19 +8,16 @@ aaaaxb , bbaaaabb, aacbaaab are not special strings
 solution
 ========================================================================================
 
-a= 'aabab'
-flag = 0    
-x = a.find('ab')
-print(x)
-b= a[0:x]
-print('value of b =',b)
-for i in b:
-    if i=='a':
-        flag = 1
-    else:
-        flag= -1
-        break
-if x>0 and flag==1 or a=='ab':
-    print('special string')
-else:
-    print('not special')
+def special(S):   
+    x = S.find('ab')
+    if x==-1:
+        return 'No'
+    A=S[:x+1]
+    B=S[x+1:]
+    for i in A:
+        if i!='a':
+            return 'No'
+    for i in B:
+        if i!='b':
+            return 'No'
+    return 'Yes'

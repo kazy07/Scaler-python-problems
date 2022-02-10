@@ -1,0 +1,26 @@
+Special string.
+
+if a string starts with lower case letter a and is immidiately succeded by b it is a special string.
+
+example aabab, aab, aaaabbbb are special strings
+aaaaxb , bbaaaabb, aacbaaab are not special strings
+========================================================================================
+solution
+========================================================================================
+
+a= 'aabab'
+flag = 0    
+x = a.find('ab')
+print(x)
+b= a[0:x]
+print('value of b =',b)
+for i in b:
+    if i=='a':
+        flag = 1
+    else:
+        flag= -1
+        break
+if x>0 and flag==1 or a=='ab':
+    print('special string')
+else:
+    print('not special')

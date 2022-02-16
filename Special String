@@ -2,8 +2,8 @@ Special string.
 
 if a string starts with lower case letter a and is immidiately succeded by b it is a special string.
 
-example aabab, aab, aaaabbbb are special strings
-aaaaxb , bbaaaabb, aacbaaab are not special strings
+example aabb, aab, aaaabbbb are special strings
+aaaaxb , aabbaaaabb, aacbaaab are not special strings
 ========================================================================================
 solution
 ========================================================================================
